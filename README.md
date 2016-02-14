@@ -1,10 +1,11 @@
 # raspberrypi-selfie
 
-First install a VM to have a RaspberryPi emulating in your enviroment, in my case OSX.
+Using RaspberryPi, a Camera and a Push Button to have a Selfie widget that takes a picture from the user and automatically post in a wordpress blog in the web. 
+
 
 ## Emulating
 
-Install the emulator, QEMU:
+First install a VM to have a RaspberryPi emulating in your enviroment, in my case OSX. So install the emulator, QEMU:
 
 * brew install qemu
 
@@ -59,14 +60,70 @@ Compile manually:
 
 
 
+## Resize Image
+
+Install Macports, it will install packages to resize image:
+
+* https://guide.macports.org/#installing.macports
+
+TO install the package to resize, called e2fsprogs:
+
+* /opt/local/bin/port e2fsprogs
+
+With all libs, follow the procedure:
+
+* http://raspberrypi.stackexchange.com/questions/4943/resize-image-file-before-writing-to-sd-card
 
 
 
 ## Install in raspberry:
 
+There is a step by step here:
+
+* https://www.raspberrypi.org/documentation/installation/installing-images/
+
+As i'm using MAC:
+
+* https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
+
+Basically, input your SD card then:
+
+* run df -h and see the dev number for your sdcard, in my case were /dev/disk3
+* Then unmount: diskutil unmount /dev/disk3
+* After that store your img in SD: sudo dd bs=1m if=2012-12-16-wheezy-raspbian.img of=/dev/disk3
+
+
+### Other links
+
 * https://github.com/debian-pi/raspbian-ua-netinst
 * http://blog.smalleycreative.com/linux/setup-a-headless-raspberry-pi-with-raspbian-jessie-on-os-x/
 
+
+## Development
+
+https://www.raspberrypi.org/documentation/linux/software/python.md
+
+Post in Wordpress:
+
+* http://python-wordpress-xmlrpc.readthedocs.org/
+
+Camera
+
+* http://www.rs-online.com/designspark/electronics/knowledge-item/raspberry-pi-camera-setup
+* http://blog.gbaman.info/?p=150
+
+Libs:
+
+* http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/ 
+
+
+## Configuration
+
+You need to define WP Url , User and Password to connect via XMLRPC:
+
+* export WP_LINK=http://yourblog.com/xmlrpc.php
+* export WP_USER=admin
+* export WP_PASS=MYpass
 
 ## TODO: 
 
