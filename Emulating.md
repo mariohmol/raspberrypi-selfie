@@ -5,10 +5,6 @@ Using RaspberryPi, a Camera and a Push Button to have a Selfie widget that takes
 
 ## Emulating
 
-See all steps to emulate raspberrypi in your MacOS
-
-[Absolute README link](https://github.com/mariohmol/raspberrypi-selfie/blob/branch/master/Emulating.md)
-
 First install a VM to have a RaspberryPi emulating in your enviroment, in my case OSX. So install the emulator, QEMU:
 
 * brew install qemu
