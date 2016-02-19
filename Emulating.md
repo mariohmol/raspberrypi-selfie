@@ -1,6 +1,3 @@
-# raspberrypi-selfie
-
-Using RaspberryPi, a Camera and a Push Button to have a Selfie widget that takes a picture from the user and automatically post in a wordpress blog in the web. 
 
 
 ## Emulating
@@ -62,6 +59,8 @@ Compile manually:
 
 ## Resize Image
 
+If you need a image with more free space, using MacOS as guest in VM, you need to 
+
 Install Macports, it will install packages to resize image:
 
 * https://guide.macports.org/#installing.macports
@@ -98,38 +97,4 @@ Basically, input your SD card then:
 * https://github.com/debian-pi/raspbian-ua-netinst
 * http://blog.smalleycreative.com/linux/setup-a-headless-raspberry-pi-with-raspbian-jessie-on-os-x/
 
-
-## Development
-
-https://www.raspberrypi.org/documentation/linux/software/python.md
-
-Post in Wordpress:
-
-* http://python-wordpress-xmlrpc.readthedocs.org/
-
-Camera
-
-* http://www.rs-online.com/designspark/electronics/knowledge-item/raspberry-pi-camera-setup
-* http://blog.gbaman.info/?p=150
-
-Libs:
-
-* http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/ 
-
-
-## Configuration
-
-You need to define WP Url , User and Password to connect via XMLRPC:
-
-* export WP_LINK=http://yourblog.com/xmlrpc.php
-* export WP_USER=admin
-* export WP_PASS=MYpass
-
-## TODO: 
-
-* Make it read a camera and show in screen
-* Button to make an action
-* This action take a picture and save local
-* Take this local picture and send as a post to WP
-* Have to connect using local wifi
 
